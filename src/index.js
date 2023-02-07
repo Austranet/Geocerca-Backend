@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
 
 app.use(cors());
@@ -11,3 +10,5 @@ app.listen(app.get('port'), () => {
 });
 
 app.use(require('./routes/establecimiento'));
+app.use(require('./routes/poligono'));
+app.use(require('./routes/coordenada'));

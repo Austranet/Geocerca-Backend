@@ -25,6 +25,10 @@ const Establecimiento = sequelize.define('establecimiento', {
     norte: {
         type: DataTypes.FLOAT,
         allowNull: true,
+    },
+    huso: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
     }
 },
     {
