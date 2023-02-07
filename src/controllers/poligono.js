@@ -24,9 +24,7 @@ exports.addPoligonoBulk  = async  (poligonos) => {
         const ids = polygons.map((poligono) => {
             return { codigo_vu, id: poligono.id };
         });
-        const poligonosCreados = await Poligono.bulkCreate(ids);
-
-
+        await Poligono.bulkCreate(ids);
     }
     catch (error) {
         console.log(error);
