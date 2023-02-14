@@ -1,5 +1,21 @@
 const Poligono = require('../models/poligono');
 
+/**
+ * @swagger
+ *components:
+ *  schemas:
+ *    Poligono:    # Schema name
+ *      type: object
+ *      properties:
+ *        id:
+ *          type: integer
+ *          example: 2
+ *        codigo_vu:
+ *          type: integer
+ *          example: 5452292
+ */
+
+
 exports.addPoligono = async (req, res) => {
     const { id, codigo_vu } = req.body;
     try {

@@ -17,12 +17,18 @@ exports.getWayPointsByVuCode = async (req, res) => {
     }
 }
 
+
+
 exports.addWayPointsBulk = async (req, res) => {
     try {
-        const waypoints = req.body;
-        const puntosReferenciaCreados = await PuntoReferencia.bulkCreate(waypoints);
-        return res.status(200).json(puntosReferenciaCreados);
+        //obtiene los puntos desde el frontend
+        const waypoints = req.body; 
+        //añade los puntos creados en la Base de Datos
+        const puntosReferenciaCreados = await PuntoReferencia.bulkCreate(waypoints); 
+        // manda una respuesta json de los puntos creados.
+        return res.status(200).json(puntosReferenciaCreados); 
     } catch (error) {
+        //manda un error referencial de no poder crear los puntos 
         console.log(error);
         res.status(500).json({
             msg: 'Error al crear los puntos de referencia'
