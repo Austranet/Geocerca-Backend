@@ -2,5 +2,5 @@
 .gitignore
 Dockerfile.dev
 Dockerfile
-docker-compose-dev.yml
+docker-compose.yml
 README.md
