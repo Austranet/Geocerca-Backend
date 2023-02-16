@@ -1,20 +1,5 @@
 const Poligono = require('../models/poligono');
 
-/**
- * @swagger
- *components:
- *  schemas:
- *    Poligono:    # Schema name
- *      type: object
- *      properties:
- *        id:
- *          type: integer
- *          example: 2
- *        codigo_vu:
- *          type: integer
- *          example: 5452292
- */
-
 
 exports.addPoligono = async (req, res) => {
     const { id, codigo_vu } = req.body;
@@ -45,5 +30,19 @@ exports.addPoligonoBulk  = async  (poligonos) => {
     catch (error) {
         console.log(error);
         throw new Error('Error al crear los polígonos');
+    }
+}
+
+
+
+exports.getPoligonos = async (req, res) => {
+    try {
+        const poligonos = await Poligono.findAll();
+        return res.status(200).json(poligonos);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: 'Error al obtener los establecimientos'
+        });
     }
 }

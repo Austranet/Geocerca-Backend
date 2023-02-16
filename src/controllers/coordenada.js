@@ -2,35 +2,6 @@ const Coordenada = require("../models/coordenada");
 const Poligono = require("../models/poligono");
 
 
-/**
- * @swagger
- *components:
- *  schemas:
- *    Coordenada:    # Schema name
- *      type: object
- *      properties:
- *        id:
- *          type: integer
- *          example: 1
- *        id_poligono:
- *          type: integer
- *          example: 1
- *        codigo_vu:
- *          type: integer
- *          example: 5432  # Property exampl
- *        latitud:
- *          type: long
- *          example: -23.06858082
- *        longitud:
- *          type: long
- *          example: -70.3687702
- *        este:
- *          type: long
- *          example: 359788
- *        norte:
- *          type: long
- *          example: 7448232
- */
 exports.addCoordenada = async (req, res) => {
   const { id, id_poligono, codigo_vu, latitud, longitud, este, norte } =
     req.body;
@@ -53,29 +24,6 @@ exports.addCoordenada = async (req, res) => {
   }
 };
 
-/**
- * @swagger
- * /coordenadasBulk:
- *   post:
- *     summary: este método añade una nueva coordenada al poligono
- *     tags: [Coordenada]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             $ref: '#/components/schemas/Coordenada'
- *     responses:
- *       200:
- *          description: Successful operation
- *          content:
- *            application/json:
- *              schema:
- *               $ref: '#/components/schemas/Coordenada'          
- *       500:
- *         description: Error al crear la coordenada
- */
 
 exports.addCoordenadaBulk = async (req, res) => {
   try {
