@@ -149,7 +149,7 @@
     "/coordenadas/{codigo_vu}": {
       "get": {
         "tags": ["Coordenada"],
-        "summary": "Este endpoints busca una coordenada por codigo_vu",
+        "summary": "Este endpoints busca las coordenadas correspondientes a un codigo_vu",
         "operationId": "codigo_vu",
         "parameters": [
           {
@@ -184,13 +184,13 @@
     "/coordenadasBulk": {
       "post": {
         "tags": ["Coordenada"],
-        "summary": "Cargar coordenadas",
+        "summary": "Carga una lista de coordenadas",
         "requestBody": {
           "description": "Añadir Coordenadas",
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
+                "type": "Array",
                 "$ref": "#/components/schemas/Coordenada"
               }
             }
@@ -220,7 +220,7 @@
         "tags": ["Poligono"],
         "summary": "Cargar Poligono",
         "requestBody": {
-          "description": "Añadir Poligonos",
+          "description": "Añadir Poligono",
           "content": {
             "application/json": {
               "schema": {
@@ -252,7 +252,7 @@
     "/allPoligonos": {
       "get": {
         "tags": ["Poligono"],
-        "summary": "Este endpoints muestra todos los poligonos creados",
+        "summary": "Obtiene todos los poligonos",
         "responses": {
           "200": {
             "description": "successful operation",
@@ -275,7 +275,7 @@
     "/puntosReferencia/{codigo_vu}": {
       "get": {
         "tags": ["PuntoReferencia"],
-        "summary": "Este endpoints busca un punto de referencia por medio de su codigo_vu.",
+        "summary": "Este endpoints busca los puntos de referencia correspondientes a un codigo_vu.",
         "operationId": "codigo_vu",
         "parameters": [
           {
@@ -294,7 +294,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                    "type": "Array",
                   "$ref": "#/components/schemas/PuntoReferencia"
                 }
               }
@@ -310,13 +310,13 @@
     "/puntosReferencia": {
       "post": {
         "tags": ["PuntoReferencia"],
-        "summary": "Cargar Punto de referencia",
+        "summary": "Cargar Puntos de referencia",
         "requestBody": {
-          "description": "Añadir Puntos",
+          "description": "Añadir una lista de puntos de referencia",
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
+                "type": "Array",
                 "$ref": "#/components/schemas/PuntoReferencia"
               }
             }

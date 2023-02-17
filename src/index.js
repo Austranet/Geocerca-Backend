@@ -15,7 +15,9 @@ app.listen(app.get("port"), () => {
 });
 
 console.log("...............................");
-app.use(require("./routes/home"));
+app.get("/", (req, res) => {
+    res.redirect("/api-docs");
+});
 app.use(require("./routes/establecimiento"));
 app.use(require("./routes/poligono"));
 app.use(require("./routes/coordenada"));
