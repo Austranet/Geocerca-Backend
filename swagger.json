@@ -204,21 +204,28 @@
                               "type": "integer",
                               "example": 1
                             },
-                            "latitud": {
-                              "type": "long",
-                              "example": "-23.06858082"
-                            },
-                            "longitud": {
-                              "type": "long",
-                              "example": "-70.3687702"
-                            },
-                            "este": {
-                              "type": "long",
-                              "example": "359788"
-                            },
-                            "norte": {
-                              "type": "long",
-                              "example": "7448232"
+                            "coordenadas": {
+                              "type": "array",
+                              "items": {
+                                "properties": {
+                                  "latitud": {
+                                    "type": "long",
+                                    "example": "-23.06858082"
+                                  },
+                                  "longitud": {
+                                    "type": "long",
+                                    "example": "-70.3687702"
+                                  },
+                                  "este": {
+                                    "type": "long",
+                                    "example": "359788"
+                                  },
+                                  "norte": {
+                                    "type": "long",
+                                    "example": "7448232"
+                                  }
+                                }
+                              }
                             }
                           }
                         }
